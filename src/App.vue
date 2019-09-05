@@ -88,117 +88,146 @@ export default {
 </script>
 
 <style lang="scss">
-html {
-  background-color: rgb(130, 171, 209);
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-.demo-wrapper {
-  display: grid;
-  grid-template-columns: 100px repeat(4, 1fr) 100px;
-  grid-template-rows: 100px repeat(4, 1fr) 100px;
-  grid-template-areas:
-    ". top-left top-left top-right top-right ."
-    "left-top center center center center right-top"
-    "left-top center center center center right-top"    
-    "left-bottom center center center center right-bottom"
-    "left-bottom center center center center right-bottom"
-    ". bottom-left bottom-left bottom-right bottom-right .";
-    width: 65vmin;
-    height: 65vmin;
-    margin: auto;
-    justify-items: center;
-    align-items: center;
-    grid-gap: 3px;
-}
-
-.demo-component {
-  grid-area: center;
-  width: 50vmin;
-  height: 50vmin;
-  background-color: blueviolet;
-  justify-self: center;
-  align-self: center;
-}
-
-.top-left {
-  grid-area: top-left;
-}
-
-.top-right {
-  grid-area: top-right;
-}
-
-.right-top {
-  grid-area: right-top;
-}
-
-.right-bottom {
-  grid-area: right-bottom;
-}
-
-.bottom-right {
-  grid-area: bottom-right;
-}
-
-.bottom-left {
-  grid-area: bottom-left;
-}
-
-.left-bottom {
-  grid-area: left-bottom;
-}
-
-.left-top {
-  grid-area: left-top;
-}
-
-.right-top, .right-bottom {
-  input[type="range"]{
-    transform: rotate(90deg);
+  html {
+    background-color: rgb(130, 171, 209);
   }
-}
-.left-top, .left-bottom {
-  input[type="range"]{
-    transform: rotate(-90deg);
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
   }
-}
 
-.right-bottom, .bottom-right, .top-right, .left-top {
-  direction: rtl;
-}
+  .demo-wrapper {
+    display: grid;
+    grid-template-columns: 100px repeat(4, 1fr) 100px;
+    grid-template-rows: 100px repeat(4, 1fr) 100px;
+    grid-template-areas:
+      ". top-left top-left top-right top-right ."
+      "left-top center center center center right-top"
+      "left-top center center center center right-top"    
+      "left-bottom center center center center right-bottom"
+      "left-bottom center center center center right-bottom"
+      ". bottom-left bottom-left bottom-right bottom-right .";
+      width: 65vmin;
+      height: 65vmin;
+      margin: auto;
+      justify-items: center;
+      align-items: center;
+      grid-gap: 3px;
+  }
 
-.copy-wrapper {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  margin-top: 2em;
-}
+  .demo-component {
+    grid-area: center;
+    width: 50vmin;
+    height: 50vmin;
+    background-color: blueviolet;
+    justify-self: center;
+    align-self: center;
+  }
 
-p {
-  font-size: 1.5rem;
-  font-weight: bold;
-  align-self: center;
-}
+  .top-left {
+    grid-area: top-left;
+  }
 
-.copy-content {
-  align-self: center;
-  font-size: 1.3rem;
-  padding: 25px 10px;
-  background-color: #2c3e50;
-}
+  .top-right {
+    grid-area: top-right;
+  }
 
-input[type="range"] {
-  // overflow: hidden;
-  background-color: blue;
-  -webkit-appearance: none;
-  height: 5px;
-}
+  .right-top {
+    grid-area: right-top;
+  }
+
+  .right-bottom {
+    grid-area: right-bottom;
+  }
+
+  .bottom-right {
+    grid-area: bottom-right;
+  }
+
+  .bottom-left {
+    grid-area: bottom-left;
+  }
+
+  .left-bottom {
+    grid-area: left-bottom;
+  }
+
+  .left-top {
+    grid-area: left-top;
+  }
+
+  .right-top, .right-bottom {
+    input[type="range"]{
+      transform: rotate(90deg);
+    }
+  }
+  .left-top, .left-bottom {
+    input[type="range"]{
+      transform: rotate(-90deg);
+    }
+  }
+
+  .right-bottom, .bottom-right, .top-right, .left-top {
+    direction: rtl;
+  }
+
+  .copy-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 2em;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-self: center;
+  }
+
+  .copy-content {
+    align-self: center;
+    font-size: 1.3rem;
+    padding: 25px 10px;
+    background-color: #2c3e50;
+  }
+
+  input[type="range"] {
+    // overflow: hidden;
+    background-color: blue;
+    -webkit-appearance: none;
+    height: 5px;
+  }
+
+  @media only screen and (max-width:1200px) {
+    .demo-wrapper {
+      grid-template-columns: 50px repeat(4, 1fr) 50px;
+      grid-template-rows: 50px repeat(4, 1fr) 50px;
+    }
+  }
+  @media only screen and (max-width:768px) {
+    .demo-wrapper {
+      grid-template-columns: 50px repeat(4, 1fr) 50px;
+      grid-template-rows: 50px repeat(4, 1fr) 50px;
+    }
+  }
+  @media only screen and (max-width:576px) {
+    .demo-wrapper {
+      grid-template-columns: 25px repeat(4, 1fr) 25px;
+      grid-template-rows: 25px repeat(4, 1fr) 25px;
+      width: 85vmin;
+      height: 85min;
+    }
+  }
+  @media only screen and (max-width:420px) {
+    .demo-wrapper {
+      grid-template-columns: 5px repeat(4, 1fr) 5px;
+      grid-template-rows: 5px repeat(4, 1fr) 5px;
+      width: 85vmin;
+      height: 85vmin;
+    }
+  }
 </style>
